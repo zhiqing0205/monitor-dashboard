@@ -108,6 +108,7 @@ pnpm dev
 | `totalField` | string | ❌ | 总额字段路径 |
 | `reverse` | boolean | ❌ | 是否反转计算（默认 false） |
 | `decimals` | number | ❌ | 小数位数（默认 2） |
+| `link` | string | ❌ | 点击卡片跳转的链接 |
 | `auth` | object | ❌ | 认证配置 |
 
 ### 认证方式
@@ -169,6 +170,13 @@ pnpm dev
 
 - `reverse: false`（默认）：API 返回剩余余额，直接显示
 - `reverse: true`：API 返回已使用量，计算余额 = total - used
+
+### 链接跳转说明
+
+- `link` 字段为可选配置，用于点击卡片时跳转到指定网站
+- 当配置了 `link` 字段时，卡片会显示外链图标指示器
+- 悬浮到卡片上时会显示炫彩渐变边框动画效果
+- 点击卡片将在新标签页中打开链接
 
 ### 嵌套字段路径
 

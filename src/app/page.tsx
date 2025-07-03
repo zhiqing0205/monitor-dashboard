@@ -39,7 +39,8 @@ export default function Home() {
         displayUnit: config.displayUnit || '',
         decimals: config.decimals ?? 2,
         lastUpdated: 0,
-        status: 'loading' as const
+        status: 'loading' as const,
+        link: config.link
       }));
       debugLog('📊 [App Debug] Initial statuses created:', initialStatuses.length);
       setStatuses(initialStatuses);
@@ -67,7 +68,8 @@ export default function Home() {
             displayUnit: config.displayUnit || '',
             decimals: config.decimals ?? 2,
             lastUpdated: response.timestamp,
-            status: 'success' as const
+            status: 'success' as const,
+            link: config.link
           };
         } catch (error) {
           debugLog(`❌ [App Debug] Failed to fetch ${config.id}:`, error);
@@ -80,7 +82,8 @@ export default function Home() {
             decimals: config.decimals ?? 2,
             lastUpdated: Date.now(),
             status: 'error' as const,
-            error: error instanceof Error ? error.message : 'Unknown error'
+            error: error instanceof Error ? error.message : 'Unknown error',
+            link: config.link
           };
         }
       });

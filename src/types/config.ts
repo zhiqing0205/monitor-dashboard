@@ -19,6 +19,7 @@ export interface MonitorConfig {
   totalField?: string; // 响应体中总量字段名，可选
   reverse?: boolean; // 是否反转计算（总量 - 使用量 = 余额），默认为 false
   decimals?: number; // 保留小数位数，默认为 2
+  link?: string; // 可选的跳转链接
 }
 
 export interface BalanceResponse {
@@ -39,4 +40,5 @@ export interface MonitorStatus {
   lastUpdated: number;
   status: 'success' | 'error' | 'loading';
   error?: string;
+  link?: string; // 可选的跳转链接
 }

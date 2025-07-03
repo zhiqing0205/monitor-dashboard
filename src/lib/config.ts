@@ -80,7 +80,8 @@ const validateConfig = (config: any): MonitorConfig | null => {
     totalField: config.totalField ? String(config.totalField) : undefined,
     reverse: Boolean(config.reverse),
     decimals: typeof config.decimals === 'number' ? config.decimals : 2,
-    auth: config.auth || undefined
+    auth: config.auth || undefined,
+    link: config.link ? String(config.link) : undefined
   };
 };
 
